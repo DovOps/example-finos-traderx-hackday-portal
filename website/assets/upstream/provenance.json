@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/finos/traderX",
+  "branch": "main",
+  "revision": "f3e72266d8e9cb8bdd1693fff8b58e20767b0d65",
+  "assets": [
+    {
+      "file": "TraderX_Horizontal.svg",
+      "upstreamPath": "website/static/img/traderX/TraderX_Horizontal.svg",
+      "sha256": "368b058f1bc6fe252c7c939485875560b79fba45d1d251b82c7c1a2d1db268bd"
+    },
+    {
+      "file": "TraderX_Horizontal_BLK.svg",
+      "upstreamPath": "website/static/img/traderX/TraderX_Horizontal_BLK.svg",
+      "sha256": "f77dc4370d3838509e59b098d15e340be492b2fa8969a157b99f7812727f9f19"
+    },
+    {
+      "file": "finos-white.png",
+      "upstreamPath": "website/static/img/finos/finos-white.png",
+      "sha256": "d9aafc929d56b04274cddb2b6d7bbf8929ec5053e086c2ea7165adf7c0a3cd48"
+    },
+    {
+      "file": "finos-blue.png",
+      "upstreamPath": "website/static/img/finos/finos-blue.png",
+      "sha256": "ae122df171d9ced670996a41e52d2a029e9a5fc206959dde98c68824bf00635a"
+    },
+    {
+      "file": "favicon-traderX.ico",
+      "upstreamPath": "website/static/img/favicon/favicon-traderX.ico",
+      "sha256": "0a5e1adde2710c881a35894ec3a9d187107acbe75791aa222fde95b5211551d0"
+    }
+  ]
+}

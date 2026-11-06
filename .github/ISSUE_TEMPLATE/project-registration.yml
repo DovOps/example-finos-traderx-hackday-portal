@@ -1,0 +1,45 @@
+name: Project registration request
+description: Introduce an exploring hackday project or request a reviewed revision update.
+title: "Project registration: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is an intake request, not an automatic portal listing. Exploring projects are welcome.
+        Your implementation stays in your team fork; participant repositories are not central submodules.
+        Published listings depend on the registry validation gates being enabled.
+  - type: textarea
+    id: project
+    attributes:
+      label: Project identity and question
+      description: Stable project/team ID, title, summary, and what you want to learn.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Repository and revision
+      description: Public team repository URL, pushed 40-character SHA, and manifest path if prepared.
+    validations:
+      required: true
+  - type: textarea
+    id: lineage
+    attributes:
+      label: Starting state and experiment states
+      description: Any upstream starting state (004 is not required), full upstream SHA, experiment state IDs, pinned guides/specs, required services/tools and operator support needs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, limitations and next steps
+      description: Say exploring when no demo exists yet. Include revision-specific evidence for stronger claims.
+    validations:
+      required: true
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Ownership, consent and attribution
+      description: Maintenance contact, content license/attribution, and only explicitly consented public profiles.
+    validations:
+      required: true

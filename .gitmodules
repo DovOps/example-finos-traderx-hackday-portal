@@ -1,0 +1,3 @@
+[submodule "upstream/traderX"]
+	path = upstream/traderX
+	url = https://github.com/finos/traderX.git

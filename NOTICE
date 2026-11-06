@@ -2,3 +2,13 @@ FINOS
 Copyright FINOS - 2026 info@finos.org
 
 This product includes software developed at the Fintech Open Source Foundation (https://www.finos.org/).
+
+The Hackday Lab portal adapts website/src/css/custom.css from FINOS TraderX,
+revision 56c458457e35f32215500a03a3c320c92801567a, under Apache-2.0.
+Hackday additions are maintained in this independent overlay repository.
+
+TraderX and FINOS logo files are copied unchanged from FINOS TraderX main,
+revision f3e72266d8e9cb8bdd1693fff8b58e20767b0d65. File paths and SHA-256
+hashes are recorded in website/assets/upstream/provenance.json.
+Use here identifies the upstream project and foundation; it does not imply
+that this independent Hackday Lab is an official FINOS service.

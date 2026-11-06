@@ -1,1 +1,10 @@
 .DS_Store
+.venv/
+dist/
+generated/
+__pycache__/
+website/node_modules/
+website/.docusaurus/
+website/content/
+website/static/
+website/src/data.json

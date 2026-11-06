@@ -1,59 +1,58 @@
-# {project name}
+# TraderX Hackday Lab
 
-**Hackathon Track:** {track name/number}
+Independent proof of concept for a proposed FINOS hackday; not an official FINOS service. Built from the finos-hack template, with TraderX attribution. Organizer handover remains pending.
 
-Short blurb about what your project does.
+Start with [the participant guide](docs/get-started.md), [team fork workflow](docs/participating.md), [registration and updates](docs/registration.md), [learning paths](docs/learning/index.md), [evidence gates](docs/planning/gates.md) and [published roadmap](https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/1).
 
-## Installation
+## Run another hackday
 
-OS X & Linux:
+Use the [operator playbook](docs/operators/index.md), [coaching prompts](docs/operators/prompts.md) and [registration review checklist](docs/operators/review.md). The [reusable portal spec pack](specs/portal-template/spec.md) records detailed requirements, implementation phases, tasks, system boundaries and acceptance evidence for a future event template.
 
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
+## Local portal
 
 ```sh
-edit autoexec.bat
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python scripts/lab.py check
+.venv/bin/python -m unittest discover -s tests
+npm --prefix website ci
+.venv/bin/python scripts/lab.py build
+npm --prefix website run serve
 ```
 
-## Usage example
+The Docusaurus portal presents pinned upstream state references alongside Lab specs, learning guides, challenges and the participant registry. It reuses TraderX’s navy/cyan documentation theme with a Hackday Lab label and a link to the official documentation.
 
-A few motivating and useful examples of how your project can be used. Spice this up with code blocks and potentially screenshots / videos.
+The portal is a documentation prototype, not a hosted TraderX runtime. Registry starts empty. Synthetic participant repositories and runtime rehearsal remain planned. GitHub Pages artifact builds are configured; deployment is opt-in.
 
-## Development setup
+## GitHub Pages
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+The [spec portal workflow](.github/workflows/spec-portal.yml) validates and builds on pushes and PRs to `main`, and on manual runs. It uploads a `github-pages` artifact containing the deployable `dist/` tree. It does not run TraderX services or ingest participant code.
+
+Expected site: https://dovops.github.io/example-finos-traderx-hackday-portal/
+
+To enable hosting:
+
+1. In repository **Settings → Pages**, select **GitHub Actions** as the source.
+2. In **Settings → Secrets and variables → Actions → Variables**, set `PAGES_ENABLED` to `true`.
+3. Run **Build spec portal** on `main` from the Actions tab. Subsequent pushes to `main` deploy automatically; PRs only build.
+
+The deployment job uses the `github-pages` environment. Apply any desired environment protection to `main`. Until you enable the variable, the workflow only creates the artifact; no Pages site is published.
 
 ```sh
-make install
-npm test
+npm --prefix website run build:pages
+python3 scripts/check-site.py dist --base-url /example-finos-traderx-hackday-portal/
 ```
 
-## Roadmap
+`build:pages` derives the origin and base path from `GITHUB_REPOSITORY` in Actions, or `portal/config.json` locally. For this repo it uses `https://dovops.github.io` and `/example-finos-traderx-hackday-portal/`. `PORTAL_URL` and `PORTAL_BASE_URL` support explicit overrides. Ordinary `npm --prefix website run build` keeps the local `/` preview. Both commands replace `dist/`; rebuild locally before serving a root-path preview.
 
-This project was built during a time-boxed FINOS hackathon. List below what you would like to achieve after the hackathon, if the project continues.
+See [GitHub’s custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Docusaurus URL configuration](https://docusaurus.io/docs/api/docusaurus-config#baseUrl).
 
-1. {Goal after the hackathon}
-2. {Goal after the hackathon}
+## Overlay
 
-## Contributing
+Upstream TraderX is pinned in `upstream/traderX`; event changes live here. See [tooling](docs/tooling.md) and [specification](specs/lab-foundation/spec.md). Generated outputs are ignored and never the source of durable changes. See the [runtime rehearsal](docs/planning/runtime-rehearsal.md) for start/test/stop commands and required evidence.
 
-Coding agents should follow [AGENTS.md](./AGENTS.md), which requires a Developer Certificate of Origin sign-off on every commit.
+## Contributing and license
 
-**All commits** must be signed with a DCO signature to avoid being flagged by the DCO Bot. This means that your commit log message must contain a line that looks like the following one, with your actual name and email address:
+Follow [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md). Every commit requires a DCO sign-off matching the configured human author.
 
-```
-Signed-off-by: John Doe <john.doe@example.com>
-```
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
-
-## License
-
-Copyright 2026 FINOS
-
-Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-SPDX-License-Identifier: [Apache-2.0](https://spdx.org/licenses/Apache-2.0)
+Copyright 2026 FINOS. Distributed under [Apache 2.0](LICENSE). Preserve [NOTICE](NOTICE) and upstream attribution. SPDX-License-Identifier: Apache-2.0.

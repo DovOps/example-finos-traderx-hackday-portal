@@ -1,0 +1,37 @@
+[
+  {
+    "number": 1,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/1",
+    "title": "Roadmap: TraderX Hackday Lab prototype and end-to-end participant rehearsal"
+  },
+  {
+    "number": 2,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/2",
+    "title": "Specify overlay generation, baseline and experiment scaffolding"
+  },
+  {
+    "number": 3,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/3",
+    "title": "Specify project registry, participant manifest and safe showcase ingestion"
+  },
+  {
+    "number": 4,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/4",
+    "title": "Build distinct Hackday Lab portal, participant guide and learning showcase"
+  },
+  {
+    "number": 5,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/5",
+    "title": "Configure Netlify portal production and PR previews with separate runtime validation"
+  },
+  {
+    "number": 6,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/6",
+    "title": "Rehearse registration with synthetic Team Orbit and Team Nova repositories"
+  },
+  {
+    "number": 7,
+    "url": "https://github.com/DovOps/example-finos-traderx-hackday-portal/issues/7",
+    "title": "Plan FINOS-adjacent organization handover, event governance and archive policy"
+  }
+]

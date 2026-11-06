@@ -1,0 +1,23 @@
+{
+  "name": "traderx-hackday-lab-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare-content": "node scripts/prepare-content.mjs",
+    "build": "npm run prepare-content && docusaurus build --out-dir ../dist",
+    "start": "npm run prepare-content && docusaurus start --host 127.0.0.1 --port 4173",
+    "serve": "docusaurus serve --dir ../dist --host 127.0.0.1 --port 4173",
+    "build:pages": "node scripts/build-pages.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.10.1",
+    "@docusaurus/preset-classic": "3.10.1",
+    "@docusaurus/theme-mermaid": "3.10.1",
+    "@mermaid-js/layout-elk": "0.1.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

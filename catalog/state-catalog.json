@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "states": [
+    {
+      "id": "lab-004-baseline",
+      "title": "Compose baseline",
+      "previous": [
+        "004-containerized-compose-runtime"
+      ],
+      "generation": {
+        "mode": "planned"
+      },
+      "publish": {
+        "branch": "code/generated-state-lab-004-baseline"
+      },
+      "featurePack": "specs/lab-004-baseline",
+      "overlayState": {
+        "kind": "anchor",
+        "extends": "004-containerized-compose-runtime"
+      },
+      "maturity": "planned",
+      "owner": "DovOps",
+      "upstreamPin": "56c458457e35f32215500a03a3c320c92801567a",
+      "guide": "docs/learning/lab-004-baseline.md",
+      "runnable": false
+    },
+    {
+      "id": "lab-005-evidence-card",
+      "title": "Add a reproducibility evidence card",
+      "previous": [
+        "lab-004-baseline"
+      ],
+      "generation": {
+        "mode": "planned"
+      },
+      "publish": {
+        "branch": "code/generated-state-lab-005-evidence-card"
+      },
+      "featurePack": "specs/lab-005-evidence-card",
+      "overlayState": {
+        "kind": "feature",
+        "extends": "lab-004-baseline"
+      },
+      "maturity": "planned",
+      "owner": "DovOps",
+      "upstreamPin": "56c458457e35f32215500a03a3c320c92801567a",
+      "guide": "docs/learning/lab-005-evidence-card.md",
+      "runnable": false
+    }
+  ]
+}

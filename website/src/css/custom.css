@@ -1,0 +1,364 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  --tx-navy-950: #081523;
+  --tx-navy-900: #0b2138;
+  --tx-navy-800: #12395c;
+  --tx-cyan-500: #00b5e2;
+  --tx-cyan-600: #0086bf;
+  --tx-text: #172033;
+  --tx-muted: #5c6b7d;
+  --tx-border: #dce6ef;
+  --tx-surface: #f6f9fc;
+  --ifm-color-primary: #00b5e2;
+  --ifm-color-primary-dark: #0079ac;
+  --ifm-color-primary-darker: #0072a2;
+  --ifm-color-primary-darkest: #005e86;
+  --ifm-color-primary-light: #0093d2;
+  --ifm-color-primary-lighter: #009adc;
+  --ifm-color-primary-lightest: #00aef8;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-code-font-size: 95%;
+  --ifm-font-color-base: var(--tx-text);
+  --ifm-heading-color: var(--tx-navy-900);
+  --ifm-link-color: #006fa3;
+  --ifm-link-hover-color: #004f77;
+  --ifm-menu-color-active: #006fa3;
+  --ifm-navbar-background-color: var(--tx-navy-950);
+  --ifm-navbar-link-color: #eef7ff;
+  --ifm-navbar-link-hover-color: #7ee3fa;
+  --ifm-navbar-shadow: none;
+  --ifm-footer-background-color: var(--tx-navy-950);
+  --ifm-footer-title-color: #ffffff;
+  --ifm-footer-color: #d8e4ee;
+  --ifm-footer-link-color: #eef7ff;
+  --ifm-toc-border-color: var(--tx-border);
+}
+
+[data-theme='dark'] {
+  --tx-text: #eef5fb;
+  --tx-muted: #aebdcc;
+  --tx-border: #20394f;
+  --tx-surface: #0f2133;
+  --ifm-background-color: #081523;
+  --ifm-background-surface-color: #0d1d2e;
+  --ifm-font-color-base: var(--tx-text);
+  --ifm-heading-color: #f4fbff;
+  --ifm-link-color: #5fd6f4;
+  --ifm-link-hover-color: #94e7fb;
+  --ifm-navbar-background-color: #081523;
+  --ifm-navbar-link-color: #eef7ff;
+  --ifm-navbar-link-hover-color: #7ee3fa;
+  --ifm-menu-color-active: #7ee3fa;
+  --ifm-footer-background-color: #050d16;
+  --ifm-toc-border-color: var(--tx-border);
+}
+
+body {
+  font-family: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navbar__brand {
+  color: var(--ifm-navbar-link-color);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.navbar__logo {
+  height: 2rem;
+}
+
+.navbar__link {
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  background: rgba(126, 227, 250, 0.14);
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
+.navbar__toggle {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar [class*='toggleButton'] {
+  border-radius: 6px;
+  color: var(--ifm-navbar-link-color);
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.navbar [class*='toggleButton']:hover {
+  background: rgba(126, 227, 250, 0.14);
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar [class*='toggleButton'] svg {
+  color: inherit;
+}
+
+.navbar .DocSearch-Button,
+.navbar__search-input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.navbar .DocSearch-Button:hover,
+.navbar__search-input:focus {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.navbar .DocSearch-Button-Placeholder,
+.navbar .DocSearch-Button-Key,
+.navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.theme-doc-sidebar-container {
+  border-right-color: var(--tx-border);
+}
+
+.menu__link {
+  border-radius: 6px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgba(0, 181, 226, 0.12);
+  color: var(--ifm-menu-color-active);
+  font-weight: 700;
+}
+
+.theme-doc-markdown a:not(.hash-link) {
+  font-weight: 700;
+  text-underline-offset: 0.18em;
+}
+
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--tx-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.theme-doc-markdown th {
+  background: var(--tx-surface);
+  color: var(--ifm-heading-color);
+}
+
+.theme-admonition {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.theme-code-block {
+  border: 1px solid var(--tx-border);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.breadcrumbs__link,
+.pagination-nav__link {
+  border-radius: 8px;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2rem 0 1.5rem;
+}
+
+.footer__logo {
+  height: auto;
+  max-height: 120px;
+  max-width: 96px;
+}
+
+.footer__bottom {
+  margin-top: 1.25rem;
+}
+
+.footer__title {
+  letter-spacing: 0;
+}
+
+.footer__link-item:hover {
+  color: #7ee3fa;
+  text-decoration: none;
+}
+
+@media (max-width: 996px) {
+  .navbar__link:hover,
+  .navbar__link--active {
+    background: transparent;
+  }
+}
+
+.docusaurus-highlight-code-line {
+  background-color: #0033A0;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.padding {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.tx-mermaid-zoom-shell {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  margin: 0 0 1.25rem;
+  background: var(--ifm-background-surface-color);
+  position: relative;
+  z-index: 1;
+}
+
+.tx-mermaid-zoom-controls {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+}
+
+.tx-mermaid-zoom-btn {
+  background: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  border-radius: 6px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tx-mermaid-zoom-btn:hover {
+  background: var(--ifm-color-emphasis-300);
+}
+
+.tx-mermaid-zoom-viewport {
+  overflow: auto;
+  padding: 0.75rem;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tx-mermaid-zoom-viewport .theme-mermaid,
+.tx-mermaid-zoom-viewport .mermaid {
+  width: 100%;
+  min-width: 0;
+}
+
+.tx-mermaid-zoom-canvas {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100px;
+}
+
+.tx-mermaid-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+  z-index: 2000;
+}
+
+.tx-mermaid-modal-backdrop.is-visible {
+  opacity: 1;
+}
+
+.tx-mermaid-zoom-shell--modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 0;
+  z-index: 2001;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.tx-mermaid-zoom-shell--modal .tx-mermaid-zoom-controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.tx-mermaid-zoom-shell--modal .tx-mermaid-zoom-viewport {
+  max-height: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+}
+
+body.tx-mermaid-modal-open {
+  overflow: hidden;
+}
+
+/* Hackday overlay additions. Base theme above from pinned FINOS TraderX (Apache-2.0). */
+.lab-hero{background:linear-gradient(120deg,#081523,#12395c);color:#eef7ff;padding:5rem 0 3rem}.lab-hero h1{font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.08;letter-spacing:-.04em;color:white;max-width:900px;margin:1.2rem 0}.lab-hero p{font-size:1.3rem;line-height:1.6;color:#c3d8e8}.lab-kicker{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--ifm-link-color)}.lab-hero .lab-kicker{color:#7ee3fa}.lab-actions{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0}.lab-provenance{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;font-size:.85rem;color:#c3d8e8}.lab-provenance code{background:#12395c;border:0;color:white}.lab-section{padding-top:3rem;padding-bottom:2rem}.lab-section-heading{display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-bottom:1.5rem}.lab-badge{display:inline-block;background:#fff0cc;color:#664900;border:1px solid #e9ce8c;border-radius:4px;font-size:.7rem;font-weight:800;letter-spacing:.07em;padding:4px 9px}.lab-badge.upstream{background:#e4f4fc;color:#125574;border:1px dashed #4596b9}.lab-lineage{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1rem;align-items:center}.lab-lineage>a,.lab-card{background:var(--ifm-background-surface-color);border:1px solid var(--tx-border);border-radius:8px;padding:1.6rem}.lab-lineage>a:hover{border-color:var(--ifm-link-color);text-decoration:none}.lab-lineage h3{margin:.8rem 0 .5rem}.lab-lineage p{margin:0;color:var(--tx-muted)}.lab-muted{color:var(--tx-muted);font-size:.9rem;margin-top:1rem}.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}.lab-card h2{font-size:1.4rem;margin-top:1rem}.lab-card code{overflow-wrap:anywhere;font-size:.8rem}.lab-note{padding:1.4rem 1.7rem;border-left:4px solid #00b5e2;background:var(--tx-surface);border-radius:0 6px 6px 0}.lab-note p{margin:.5rem 0}.lab-lead{font-size:1.25rem;max-width:850px;color:var(--tx-muted)}.lab-filters{display:flex;gap:1.5rem;flex-wrap:wrap;margin:2rem 0 1rem}.lab-filters label{display:flex;flex-direction:column;gap:.5rem;font-weight:700;flex:1;min-width:240px}.lab-filters input,.lab-filters select{font:inherit;padding:.7rem;border:1px solid var(--tx-border);border-radius:6px;background:var(--ifm-background-surface-color);color:var(--tx-text)}.lab-state-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem}.lab-card dl{font-size:.9rem}.lab-card dt{font-weight:700;margin-top:.7rem}.lab-card dd{margin-left:0;overflow-wrap:anywhere}.lab-empty{text-align:center;border:1px dashed var(--tx-border);padding:3rem 1.5rem;border-radius:8px;margin:2rem 0;background:var(--tx-surface)}.lab-empty p{max-width:650px;margin:1rem auto 1.5rem}.navbar__title{font-size:1rem}.navbar__item{font-size:.86rem}@media(max-width:996px){.lab-grid{grid-template-columns:1fr}.lab-section-heading{display:block}.lab-hero{padding:3rem 0}.lab-lineage{grid-template-columns:1fr}.lab-lineage>span{transform:rotate(90deg);text-align:center}.lab-state-grid{grid-template-columns:1fr}}
+/* Mermaid measures normal-weight labels before the docs link style is applied. */
+.theme-doc-markdown svg a,
+.theme-doc-markdown svg .nodeLabel {font-weight:400;}
+
+/* Unmodified upstream marks; retain a distinct overlay title and warning. */
+.navbar__logo {height:2.3rem; width:7.2rem;}
+.navbar__logo img {width:100%;height:100%;object-fit:contain;}
+.navbar__title {border-left:1px solid #47647d;padding-left:.7rem;color:#ffe1a0;}
+.footer__logo {max-width:130px;max-height:90px;}
+/* The upstream horizontal mark contains dark lettering; give it a neutral field. */
+.navbar__logo {background:#fff;border-radius:4px;padding:3px 6px;}
+
+/* The hero stays navy in both themes; its controls must not inherit page text colors. */
+.lab-hero .button.button--secondary {
+  color: #eef7ff;
+  background-color: transparent;
+  border-color: #8bb3cf;
+}
+.lab-hero .button.button--secondary:hover,
+.lab-hero .button.button--secondary:focus-visible,
+.lab-hero .button.button--secondary:active {
+  color: #081523;
+  background-color: #eef7ff;
+  border-color: #eef7ff;
+}
+/* Cyan buttons use navy text in both themes, including interaction states. */
+.button.button--primary:not(.button--outline) {
+  color: #081523;
+  background-color: #00b5e2;
+  border-color: #00b5e2;
+}
+.button.button--primary:hover,
+.button.button--primary:focus-visible,
+.button.button--primary:active {
+  color: #081523;
+  background-color: #7ee3fa;
+  border-color: #7ee3fa;
+}
+.button:focus-visible {
+  outline: 3px solid var(--ifm-link-color);
+  outline-offset: 4px;
+}
+.lab-hero .button:focus-visible {
+  outline-color: #eef7ff;
+}

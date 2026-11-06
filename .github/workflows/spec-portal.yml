@@ -1,0 +1,65 @@
+name: Build spec portal
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: spec-portal-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm --prefix website ci
+      - name: Validate content and contracts
+        run: |
+          python scripts/lab.py check
+          python -m unittest discover -s tests
+          node --test website/scripts/site-location.test.cjs
+      - name: Build for this repository's GitHub Pages path
+        run: npm --prefix website run build:pages
+      - name: Check deployed links and assets
+        run: |
+          BASE_URL=$(PORTAL_TARGET=github-pages node -p "require('./website/site-location.cjs')().baseUrl")
+          python scripts/check-site.py dist --base-url "$BASE_URL"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+          retention-days: 7
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.PAGES_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy reviewed portal artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

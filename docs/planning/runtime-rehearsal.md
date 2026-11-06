@@ -34,10 +34,10 @@ Build/start and smoke logs belong in ignored `generated/logs/`. Record the upstr
 
 Registration needs immutable revision resolution, manifest and consent validation, negative cases and bounded documentation import. Portal needs navigation/schema/link checks, local and published AFDocs, an actual fork Deploy Preview and a newcomer walkthrough. Those are separate from this runtime gate.
 
-## Current trial status
+## Current rehearsal status
 
-State 014 shutdown verified: both `traderx-state-014-control-plane` and `traderx-state-014-sail-sail-1` report exited. Baseline ports were verified free before startup.
+The clean-checkout baseline and evidence-card example both passed local generation, build/start and the full inherited smoke suite. Seven booking regression tests passed separately. Baseline stop/restart and a browser two-trade journey passed; restart resets demo tables. The example transform was byte-identical on repeat application.
 
-The source build was launched with project `traderx-hackday-lab-004`. At the latest observation it was still downloading .NET SDK/runtime layers from Microsoft Container Registry; no application build failure had appeared. The build/start process remains running. Health, smoke, regression, restart and browser checks have not yet run. Inspect `generated/logs/runtime-start.log` before running the test command.
+See [the dated evidence record](runtime-evidence-2026-11-05.md) for exact revisions, scope and remaining gates. All rehearsal services were stopped after testing; containers were retained. The portal remains a separate service.
 
-The generated GHCR 004 bundle uses mutable `latest` tags and was not used as evidence for this pinned source revision.
+Run `bash pipeline/test-java.sh` after generation for booking regression reports. Several generated modules contain no discoverable tests; only the executed booking cases are claimed as passing tests. The GHCR bundle's mutable `latest` tags were not used as evidence for this pinned source revision.

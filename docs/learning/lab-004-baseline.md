@@ -1,6 +1,6 @@
 ---
 id: lab-004-baseline
-status: planned
+status: locally-verified
 ---
 # Compose baseline
 
@@ -16,7 +16,7 @@ Explain the upstream pin, generated output boundary and evidence required to cla
 
 1. Read the [specification](../../specs/lab-004-baseline/spec.md).
 2. Run `bash pipeline/generate-state.sh lab-004-baseline --dry-run`. This creates layout; it does not start services.
-3. Inspect generated files, then follow the generated runtime guide when the baseline build gate is ready.
+3. Inspect generated files, then run `bash pipeline/runtime.sh start`, `bash pipeline/test-java.sh`, and `bash pipeline/runtime.sh test`. Stop with `bash pipeline/runtime.sh stop`.
 4. Record command, revision, environment, outcome and limitations.
 
 ## Assessment
@@ -29,4 +29,4 @@ Ask your agent to explain each generated change before applying it. Hint 1: find
 
 ## Limitations and provenance
 
-Planned exercise; no runtime results claimed. [System contract](../../specs/lab-004-baseline/system/contract.md).
+A clean-checkout local runtime rehearsal passed; see [results and limitations](../planning/runtime-evidence-2026-11-05.md). This is not an independent newcomer reproduction. Restart resets the seeded demo tables. [System contract](../../specs/lab-004-baseline/system/contract.md).

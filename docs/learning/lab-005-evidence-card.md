@@ -1,6 +1,6 @@
 ---
 id: lab-005-evidence-card
-status: planned
+status: locally-verified
 ---
 # Add a reproducibility evidence card
 
@@ -29,4 +29,4 @@ Ask your agent to explain each generated change before applying it. Hint 1: find
 
 ## Limitations and provenance
 
-Planned exercise; no runtime results claimed. [System contract](../../specs/lab-005-evidence-card/system/contract.md).
+Generation, transform repeatability and inherited runtime smoke checks passed locally; see [results and limitations](../planning/runtime-evidence-2026-11-05.md). This is not an independent newcomer reproduction. [System contract](../../specs/lab-005-evidence-card/system/contract.md).

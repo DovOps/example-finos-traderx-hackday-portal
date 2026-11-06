@@ -38,6 +38,10 @@ def check():
         seen.add(s['id'])
         if s['upstreamPin'] != config['upstreamPin']:
             raise ValueError('Inconsistent upstream pin')
+        if s.get('runtimeEvidence'):
+            evidence = s['runtimeEvidence']
+            if not re.fullmatch(r'[0-9a-f]{40}', evidence['sourceRevision']) or not (ROOT / evidence['report']).is_file():
+                raise ValueError('Runtime evidence needs an exact revision and report')
         for path in [s['guide']] + [s['featurePack'] + '/' + f for f in ['spec.md', 'plan.md', 'tasks.md', 'system/contract.md']]:
             if not (ROOT / path).is_file():
                 raise ValueError('Missing state artifact: ' + path)

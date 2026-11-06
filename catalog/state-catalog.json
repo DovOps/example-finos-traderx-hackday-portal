@@ -8,7 +8,7 @@
         "004-containerized-compose-runtime"
       ],
       "generation": {
-        "mode": "planned"
+        "mode": "overlay"
       },
       "publish": {
         "branch": "code/generated-state-lab-004-baseline"
@@ -18,11 +18,16 @@
         "kind": "anchor",
         "extends": "004-containerized-compose-runtime"
       },
-      "maturity": "planned",
+      "maturity": "locally-verified",
       "owner": "DovOps",
       "upstreamPin": "56c458457e35f32215500a03a3c320c92801567a",
       "guide": "docs/learning/lab-004-baseline.md",
-      "runnable": false
+      "runnable": true,
+      "runtimeEvidence": {
+        "report": "docs/planning/runtime-evidence-2026-11-05.md",
+        "sourceRevision": "9c7f826ecd629c22bf614f5232d5c738f7e17964",
+        "scope": "One local clean-checkout rehearsal; not independent reproduction"
+      }
     },
     {
       "id": "lab-005-evidence-card",
@@ -31,7 +36,7 @@
         "lab-004-baseline"
       ],
       "generation": {
-        "mode": "planned"
+        "mode": "overlay"
       },
       "publish": {
         "branch": "code/generated-state-lab-005-evidence-card"
@@ -41,11 +46,16 @@
         "kind": "feature",
         "extends": "lab-004-baseline"
       },
-      "maturity": "planned",
+      "maturity": "locally-verified",
       "owner": "DovOps",
       "upstreamPin": "56c458457e35f32215500a03a3c320c92801567a",
       "guide": "docs/learning/lab-005-evidence-card.md",
-      "runnable": false
+      "runnable": true,
+      "runtimeEvidence": {
+        "report": "docs/planning/runtime-evidence-2026-11-05.md",
+        "sourceRevision": "990097c8f3ec7baeaa7d85ba35c6ec9014d8023b",
+        "scope": "One local rehearsal from a clean updated checkout; not independent reproduction"
+      }
     }
   ]
 }

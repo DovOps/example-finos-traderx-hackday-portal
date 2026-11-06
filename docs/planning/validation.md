@@ -1,5 +1,7 @@
 # Initial local validation — 2026-11-05
 
+Historical initial snapshot. Superseded for runtime status by [the clean-checkout rehearsal](runtime-evidence-2026-11-05.md); the initial limitations below describe the earlier trial.
+
 Source branch: codex/hackday-lab-foundation (local working tree; no source commit published).
 Upstream: 56c458457e35f32215500a03a3c320c92801567a.
 

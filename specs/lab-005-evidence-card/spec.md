@@ -1,6 +1,6 @@
 # Add a reproducibility evidence card
 
-Status: planned; runtime validation pending.
+Status: locally verified; [recorded evidence and limitations](../../docs/planning/runtime-evidence-2026-11-05.md).
 
 Inherits lab-004-baseline. Add a static HACKDAY-EVIDENCE.md worksheet after generation. No application behavior or service changes. This small experiment proves transform ordering and repeatability before larger challenges.
 

@@ -1,6 +1,6 @@
 # Your hackday, step by step
 
-This is a local prototype. Baseline runtime and registration are not ready for participant use yet.
+This is a prototype. The two provided Lab examples passed [one local runtime rehearsal](planning/runtime-evidence-2026-11-05.md). Independent newcomer reproduction and automated registry publication remain incomplete.
 
 1. [Fork this overlay once per team](participating.md), clone with `--recurse-submodules`, and use feature branches for collaboration. Your code stays in your team fork; participant repositories are not submodules of the central Lab.
 2. Prefer a **convergence state** (004/C0, 007/C1, 009/C2 or 012/C3), which combines exploration tracks into a shared demo/state. Choose another upstream state when your experiment needs something specific. State 004 is the provided example, not a required starting point. Read the selected state’s pinned guide, spec and tool requirements.

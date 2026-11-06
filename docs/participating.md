@@ -2,7 +2,7 @@
 
 **Fork the Hackday Lab overlay once per team.** This gives you the starter, state catalog, specs, transforms and portal tooling. You do not need to fork FINOS TraderX or deploy a team website to participate.
 
-This is still a prototype: the runtime rehearsal and automated registry publication gates are incomplete. You can prepare your experiment and submit an early registration request; a request does not yet create a published project card.
+This is still a prototype: the two built-in Lab examples passed [one local runtime rehearsal](planning/runtime-evidence-2026-11-05.md), while independent newcomer reproduction and automated registry publication remain incomplete. You can prepare your experiment and submit an early registration request; a request does not yet create a published project card.
 
 The starter source lives on the central repository’s `main` branch. Record the exact starter commit your team forks; runtime and registry readiness remain governed by the evidence gates.
 

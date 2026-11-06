@@ -14,7 +14,7 @@ bash pipeline/runtime.sh stop
 bash pipeline/runtime.sh restart
 ```
 
-`start` builds and starts services. `restart` reuses images. `test` submits synthetic trades and changes the local demo database. `stop` retains containers and data; it does not remove volumes or delete the database. Do not regenerate while the runtime is active. The default upstream stop script uses Compose down; prefer this overlay wrapper when retaining demo data matters.
+`start` builds and starts services. `restart` reuses images. `test` submits synthetic trades and changes the local demo database. `stop` retains containers and their files; it does not remove volumes or delete the database. **Restart resets the baseline demo tables:** the pinned upstream database startup runs `initialSchema.sql`, which drops/recreates them. Export any useful demo evidence before restarting; retained files do not imply retained trades. Do not regenerate while the runtime is active. The default upstream stop script uses Compose down; prefer this overlay wrapper when retaining demo data matters.
 
 ## Required evidence
 
@@ -24,7 +24,7 @@ bash pipeline/runtime.sh restart
 4. Invalid ticker rejection, database connectivity, people/accounts/positions service checks.
 5. Two successive trade bookings: settled trade records, accumulated positions and Socket.IO events. Realtime account updates through ingress after trade submission.
 6. Baseline frontend UX contracts and a manual browser trade journey.
-7. Stop and restart only the lab project, then recheck service readiness and data retention.
+7. Stop and restart only the lab project, then recheck service readiness and confirm the documented demo-table reset.
 8. Regenerate the experiment sequentially after stopping the runtime; repeat the transform and baseline capability checks.
 9. Repeat from a clean clone before claiming independent reproducibility.
 

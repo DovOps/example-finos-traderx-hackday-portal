@@ -20,6 +20,9 @@ scratch="$(mktemp -d "$expected_root/source.XXXXXX")"
 trap 'rm -rf "$scratch"; rmdir "$expected_root/.overlay-lock"' EXIT
 git clone --quiet --shared "$OVERLAY_ROOT/upstream/traderX" "$scratch"
 git -C "$scratch" checkout --quiet --detach "$pin"
+# The local shared clone is only a transport optimization. Generated UI links
+# must identify public upstream source, not the local filesystem clone path.
+git -C "$scratch" remote set-url origin "$(git config -f .gitmodules --get submodule.upstream/traderX.url)"
 export TRADERX_GENERATED_ROOT="$expected_root"
 bash "$scratch/pipeline/generate-state.sh" 004-containerized-compose-runtime
 if [[ "$state" == lab-005-evidence-card ]]; then

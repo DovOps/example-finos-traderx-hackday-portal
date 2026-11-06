@@ -83,7 +83,7 @@ One person may hold several roles, but event records must identify who can appro
 
 ## Current implementation boundary
 
-Implemented in the starter: GitHub Pages subpath build/artifact workflow with opt-in deployment, Docusaurus portal, state references, two Lab state contracts, raw-source mirrors, upstream logo provenance, participant/operator documentation, intake-link preparation, structural registry schema/tests, baseline layout generation and a repeatable documentation transform.
+Implemented in the starter: GitHub Pages subpath build/artifact workflow with automatic deployment from main, Docusaurus portal, state references, two Lab state contracts, raw-source mirrors, upstream logo provenance, participant/operator documentation, intake-link preparation, structural registry schema/tests, baseline layout generation and a repeatable documentation transform.
 
 Not established by this pack: full baseline/runtime reproduction, general team-state scaffold/dispatch, final participant-manifest schema, remote registration validation, actual project-page ingestion, featured importer, production deployment and hosted fork previews, AFDocs results and an observed newcomer rehearsal. Registry publication remains disabled. Consult [current gates](../../docs/planning/gates.md), which may evolve after this document.
 

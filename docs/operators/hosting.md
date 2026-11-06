@@ -7,10 +7,9 @@ Expected site: https://dovops.github.io/example-finos-traderx-hackday-portal/
 To enable hosting:
 
 1. In repository **Settings → Pages**, select **GitHub Actions** as the source.
-2. In **Settings → Secrets and variables → Actions → Variables**, set `PAGES_ENABLED` to `true`.
-3. Run **Build spec portal** on `main` from the Actions tab. Subsequent pushes to `main` deploy automatically; PRs only build.
+2. Run **Build spec portal** on `main` from the Actions tab. Subsequent pushes to `main` deploy automatically; PRs only build.
 
-The deployment job uses the `github-pages` environment. Apply any desired environment protection to `main`. Until you enable the variable, the workflow only creates the artifact; no Pages site is published.
+The deployment job uses the `github-pages` environment. Apply any desired environment protection to `main`. Successful builds on `main` deploy automatically. No repository variable is required; pull requests never deploy.
 
 ```sh
 npm --prefix website run build:pages
